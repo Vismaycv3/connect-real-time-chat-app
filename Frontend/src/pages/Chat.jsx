@@ -16,7 +16,7 @@ function Chat() {
   const fetchUsers = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8000/api/users",
+        "https://connect-real-time-chat-app-3to4.onrender.com/api/users",
         {
           headers: {
             Authorization: `Bearer ${userInfo.token}`,
@@ -33,7 +33,7 @@ function Chat() {
   const fetchMessages = async (userId) => {
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/messages/${userId}`,
+        `https://connect-real-time-chat-app-3to4.onrender.com/api/messages/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${userInfo.token}`,
@@ -50,7 +50,7 @@ function Chat() {
   const sendMessage = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/messages",
+        "https://connect-real-time-chat-app-3to4.onrender.com/api/messages",
         {
           receiverId: selectedUser._id,
           text: newMessage,
@@ -83,7 +83,7 @@ function Chat() {
   }, [selectedUser]);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:8000");
+    const newSocket = io("https://connect-real-time-chat-app-3to4.onrender.com");
 
     setSocket(newSocket);
 

@@ -12,7 +12,7 @@ function Register() {
   const handleRegister = async () => {
     try {
       await axios.post(
-        "http://localhost:8000/api/auth/register",
+        "https://connect-real-time-chat-app-3to4.onrender.com/api/auth/register",
         {
           username,
           email,
